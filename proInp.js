@@ -1,5 +1,6 @@
 // chech file's input & export the results
-module.exports.checkFile = function (fileName, captured, fileObj) {
+var captured = '';
+var  checkFile = function (fileName, fileObj) {
     fileObj.stat('./exp_tests/' + fileName, function (err, stats) {
       if (err) {
         //check if file exists
@@ -18,3 +19,8 @@ module.exports.checkFile = function (fileName, captured, fileObj) {
       console.log(captured);
     });
   };
+
+module.exports = {
+  captured: captured,
+  checkFile: checkFile,
+};
