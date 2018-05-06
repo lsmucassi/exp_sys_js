@@ -1,16 +1,22 @@
-const fileObj = require('fs');
+var fileObj = require('fs');
+var reader = require('readline-sync');
+var checker = require('./proInp');
 
-const captured = '';
-var fileNmae = '';
+var captured = 'empty';
+var fileName = '';
 
-function readFile() {
-  console.log('Please Enter File name: ');
-}
+//promt for file name
+var promUser = function () {
+  fileName = reader.question('Enter File Name: ');
+};
 
-process.stdin.on('data', function(data) {
-  fileNmae = data.toString().trim();
-  process.exit();
-});
+//open and read file_ then display
+var getFile = function (name) {
+  checker.checkFile(fileName, captured, fileObj);
+};
 
-console.log(fileNmae);
-readFile();
+module.exports = {
+  fileName: fileName,
+  prompt: promUser,
+  fileIn: getFile,
+};
