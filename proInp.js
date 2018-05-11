@@ -18,8 +18,7 @@ var  checkFile = function (fileName, fileObj) {
 
       //save file content
       captured = fileObj.readFileSync('./exp_tests/' + fileName, 'utf8');
-      var st = captured.split('\n');
-      console.log(st);
+      console.log(captured);
     });
   };
 

@@ -10,7 +10,7 @@ var promUser = function () {
 };
 
 //open and read file_ then display
-var getFile = function (name) {
+var getFile = function (FileName) {
   checker.checkFile(fileName, fileObj);
 };
 
